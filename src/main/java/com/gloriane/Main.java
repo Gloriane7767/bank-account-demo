@@ -21,9 +21,21 @@ public class Main {
 
 
         Customer customer1 = new Customer("Johan Zoe", "test.test@example.com");
-        System.out.println();
+        System.out.println("Customer: " + customer1.getCustomer());
+        System.out.println("=============================");
 
-        Customer customer2 = new Customer("Alice Smith", "
+        Customer customer2 = new Customer("Alice Smith", "test.test@example.com");
+        System.out.println("Customer: " + customer2.getCustomer());
+        System.out.println("=============================");
+
+        Customer customer3 = new Customer("Bob Johnson", "test.test@example.com");
+        System.out.println("Customer: " + customer3.getCustomer());
+        System.out.println("=============================");
+
+        Customer customer4 = new Customer("Charlie Brown", "test.test@example.com");
+        System.out.println("Customer: " + customer4.getCustomer());
+
+
     }
 }
 

@@ -42,4 +42,12 @@ public class Customer {
         System.out.println("Customer Name: " + this.getName());
         System.out.println("Customer Email: " + this.getEmail());
     }
+
+    public String getCustomer() {
+        if(name != null && email != null) {
+            return "Customer Name: " + name + ", Email: " + email;
+        } else {
+            return "Customer information is incomplete.";
+        }
+    }
 }
