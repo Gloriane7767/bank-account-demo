@@ -67,6 +67,30 @@ public class Main {
         Product product4 = new Product("Monitor", 299.99);
         System.out.println(product4.getProduct());
         System.out.println("=============================");
+
+         Order order1 = new Order("ORD123");
+        order1.addProduct("Laptop", 999.99);
+        order1.addProduct("Mouse", 25.50);
+        System.out.println(order1.toString());
+        System.out.println("=============================");
+
+        Order order2 = new Order("ORD124");
+        order2.addProduct("Keyboard", 75.00);
+        order2.addProduct("Monitor", 299.99);
+        System.out.println(order2.toString());
+        System.out.println("=============================");
+
+        Order order3 = new Order("ORD125");
+        order3.addProduct("Laptop", 999.99);
+        order3.addProduct("Monitor", 299.99);
+        System.out.println(order3.toString());
+        System.out.println("=============================");
+
+        Order order4 = new Order("ORD126");
+        order4.addProduct("Mouse", 25.50);
+        order4.addProduct("Keyboard", 75.00);
+        System.out.println(order4.toString());
+        System.out.println("=============================");
     }
 }
 
