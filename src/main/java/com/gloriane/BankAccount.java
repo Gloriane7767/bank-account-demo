@@ -27,10 +27,6 @@ public class BankAccount {
         return balance;
     }
 
-    public void displayAccountInfo() {
-        System.out.println("Account Holder: " + this.getAccountHolder());
-        System.out.println("Account Balance: $" + this.getBalance());
-    }
 
     public double showBalance() {
         return balance;
@@ -42,6 +38,7 @@ public class BankAccount {
         } else {
             throw new IllegalArgumentException("Deposit amount must be positive");
         }
+        System.out.println("Deposited: $" + amount + ", New Balance: $" + balance);
     }
 
     public void withdraw(double amount) {
@@ -50,5 +47,6 @@ public class BankAccount {
         } else {
             throw new IllegalArgumentException("Invalid withdrawal amount");
         }
+        System.out.println("Withdrew: $" + amount + ", New Balance: $" + balance);
     }
 }

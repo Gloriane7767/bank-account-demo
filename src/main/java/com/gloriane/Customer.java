@@ -37,17 +37,11 @@ public class Customer {
     public int setId() {
         return UUID.randomUUID().toString().substring(0,8).hashCode();
     }
-    
-    public void displayInfo() {
-        System.out.println("Customer Name: " + this.getName());
-        System.out.println("Customer Email: " + this.getEmail());
-    }
 
     public String getCustomer() {
-        if(name != null && email != null) {
-            return "Customer Name: " + name + ", Email: " + email;
-        } else {
-            return "Customer information is incomplete.";
+        if(name == null || name.trim().isEmpty() || email == null || !email.contains("@")) {
+            throw new IllegalArgumentException("Invalid customer information");
         }
+        return this.name + ", Email: " + this.email;
     }
 }
