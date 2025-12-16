@@ -8,8 +8,9 @@ public class Customer {
     private String email;
 
     public Customer(String name, String email) {
-        this.name = name;
-        this.email = email;
+        this.id = generateId();
+        setName(name);
+        setEmail(email);
     }
 
     public String getName() {
@@ -21,8 +22,12 @@ public class Customer {
     }
 
 
-    public int setId() {
-        return UUID.randomUUID().toString().substring(0,8).hashCode();
+    private int generateId() {
+        return Math.abs(UUID.randomUUID().toString().substring(0,8).hashCode());
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setName(String name) {
@@ -39,10 +44,17 @@ public class Customer {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return "Customer{id=" + id + ", name='" + name + "', email='" + email + "'}";
+    }
+
+
     public String getCustomer() {
-        if(name == null || name.trim().isEmpty() || email == null || !email.contains("@")) {
-            throw new IllegalArgumentException("Invalid customer information");
+        if(name != null && email != null) {
+            return "Customer Name: " + name + ", Email: " + email;
+        } else {
+            return "Customer information is incomplete.";
         }
-        return this.name + ", Email: " + this.email;
     }
 }

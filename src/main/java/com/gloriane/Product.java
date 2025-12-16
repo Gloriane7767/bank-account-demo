@@ -8,6 +8,7 @@ public class Product {
     private double price;
 
     public Product(String name, double price) {
+        this.id = UUID.randomUUID().toString().substring(0,8).hashCode();
         this.name = name;
         this.price = price;
     }
@@ -18,6 +19,10 @@ public class Product {
 
     public double getPrice() {
         return price;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int setId() {
@@ -42,6 +47,6 @@ public class Product {
         if(name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("Invalid product information");
         }
-        return this.name + ", Price: $" + this.price;
+        return "ID: " + this.id + ", " + this.name + ", Price: $" + this.price;
     }
 }

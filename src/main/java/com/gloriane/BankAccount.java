@@ -5,8 +5,8 @@ public class BankAccount {
     private double balance;
 
     public BankAccount(String accountHolder, double initialBalance) {
-        this.accountHolder= accountHolder;
-        this.balance = initialBalance;
+        setAccountHolder(accountHolder);
+        setBalance(initialBalance);
     }
 
     public String getAccountHolder() {
@@ -17,14 +17,12 @@ public class BankAccount {
         return balance;
     }
 
-    public String setAccountHolder(String name) {
-        this.accountHolder = name;
-        return accountHolder;
+    public void setAccountHolder(String accountHolder) {
+        this.accountHolder = accountHolder;
     }
 
-    public double setBalance(double amount) {
-        this.balance = amount;
-        return balance;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
 
@@ -38,7 +36,6 @@ public class BankAccount {
         } else {
             throw new IllegalArgumentException("Deposit amount must be positive");
         }
-        System.out.println("Deposited: $" + amount + ", New Balance: $" + balance);
     }
 
     public void withdraw(double amount) {
@@ -47,6 +44,10 @@ public class BankAccount {
         } else {
             throw new IllegalArgumentException("Invalid withdrawal amount");
         }
-        System.out.println("Withdrew: $" + amount + ", New Balance: $" + balance);
+    }
+
+    @Override
+    public String toString() {
+        return "BankAccount{accountHolder='" + accountHolder + "', balance=" + balance + "}";
     }
 }
