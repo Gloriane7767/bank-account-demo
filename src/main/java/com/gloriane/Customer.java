@@ -23,7 +23,7 @@ public class Customer {
 
 
     private int generateId() {
-        return Math.abs(UUID.randomUUID().toString().substring(0,8).hashCode());
+        return UUID.randomUUID().toString().substring(0, 8).hashCode();
     }
 
     public int getId() {
